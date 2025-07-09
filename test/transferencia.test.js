@@ -62,8 +62,7 @@ describe('Transferências', () => {
             const resposta = await request(process.env.BASE_URL)
                 .get('/transferencias?page=1&limit=10')
                 .set('Authorization', `Bearer ${token}`)
-            
-            console.log(resposta.body);
+        
 
             expect(resposta.status).to.equal(200)
             expect(resposta.body.limit).to.equal(10)
