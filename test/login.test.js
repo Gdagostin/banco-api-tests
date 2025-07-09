@@ -1,5 +1,5 @@
-import request from 'supertest';
-import { expect } from 'chai';
+const request = require('supertest');
+const { expect } = require('chai');
 describe('Login', () => {
     describe('POST /login', () => {
         it('deve retornar 200 com token em string quando usar credenciais válidas', async () => {

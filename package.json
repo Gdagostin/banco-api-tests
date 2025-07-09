@@ -1,7 +1,6 @@
 {
   "name": "banco-api-tests",
   "version": "1.0.0",
-  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./test/**/*.test.js --timeout=200000"
