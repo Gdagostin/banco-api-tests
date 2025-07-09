@@ -4,9 +4,13 @@ import 'dotenv/config'; // Importa as variáveis de ambiente do arquivo .env
 import { obterToken } from '../helpers/autenticacao.js'; // Importa a função de autenticação, se necessário
 describe('Transferências', () => {
     describe('POST /transferencias', () => {
-        it('Deve retornar sucesso com 201 quando o valor da transferência for igual ou acima de 10,00', async () => {
 
-            const token = await obterToken('julio.lima', '123456'); // Obtém o token de autenticação
+        let token // Variável para armazenar o token de autenticação
+
+        beforeEach(async () => { // Hook(gancho): Executa antes de cada teste para garantir que o token esteja atualizado
+            token = await obterToken('julio.lima', '123456') // Obtém o token de autenticação
+        })
+        it('Deve retornar sucesso com 201 quando o valor da transferência for igual ou acima de 10,00', async () => {
 
             const resposta = await request(process.env.BASE_URL)
                 .post('/transferencias')
@@ -22,8 +26,6 @@ describe('Transferências', () => {
             console.log(resposta.body);
         })
         it('Deve retornar sucesso com 422 quando o valor da transferência for abaixo de 10,00', async () => {
-
-            const token = await obterToken('julio.lima', '123456'); // Obtém o token de autenticação
 
             const resposta = await request('http://localhost:3000')
                 .post('/transferencias')

@@ -1,3 +1,6 @@
+import request from 'supertest';
+import 'dotenv/config';
+
 export const obterToken = async (usuario, senha) => { 
     // Função para obter o token de autenticação
     const respostaLogin = await request(process.env.BASE_URL)
