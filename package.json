@@ -2,14 +2,24 @@
   "name": "banco-api-tests",
   "version": "1.0.0",
   "type": "module",
+  "description": "Testes automatizados para API bancária usando Mocha, Chai e SuperTest",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test/**/*.test.js --timeout=200000 --reporter mochawesome"
+    "test": "mocha ./test/**/*.test.js --timeout=200000 --reporter mochawesome",
+    "test:login": "mocha ./test/login.test.js --timeout=200000",
+    "test:transferencia": "mocha ./test/transferencia.test.js --timeout=200000"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "api",
+    "tests",
+    "banking",
+    "mocha",
+    "chai",
+    "supertest",
+    "automation"
+  ],
+  "author": "Seu Nome <seu.email@exemplo.com>",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "chai": "^5.2.1",
     "dotenv": "^17.2.0",
