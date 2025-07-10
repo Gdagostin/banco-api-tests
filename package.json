@@ -18,7 +18,7 @@
     "supertest",
     "automation"
   ],
-  "author": "Seu Nome <seu.email@exemplo.com>",
+  "author": "Gustavo Dagostin <gustavodagostin752@hotmail.com>",
   "license": "ISC",
   "dependencies": {
     "chai": "^5.2.1",
